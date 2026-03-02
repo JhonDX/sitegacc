@@ -1,0 +1,86 @@
+/* Fundo e centralização */
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0052CC, #00B050); /* azul forte → verde forte */
+}
+
+/* Card do login */
+.login-card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px 35px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    width: 350px;
+    text-align: center;
+    border-top: 5px solid #0052CC; /* azul forte */
+}
+
+.login-card h1 {
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 26px;
+}
+
+/* Inputs */
+.login-card input[type="text"],
+.login-card input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.login-card input[type="text"]:focus,
+.login-card input[type="password"]:focus {
+    border-color: #00B050; /* verde forte */
+    box-shadow: 0 0 8px rgba(0,176,80,0.4);
+    outline: none;
+}
+
+/* Botão */
+.login-card button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #0052CC, #00B050); /* azul → verde forte */
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-card button:hover {
+    background: linear-gradient(90deg, #003A99, #009F40); /* hover mais escuro */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+}
+
+/* Link de esqueci a senha */
+.login-card a {
+    display: block;
+    margin-top: 15px;
+    color: #00B050; /* verde forte */
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.login-card a:hover {
+    text-decoration: underline;
+    color: #0052CC; /* azul forte ao passar o mouse */
+}
+
+/* Mensagem de erro */
+.erro {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}

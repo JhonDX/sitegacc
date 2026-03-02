@@ -1,0 +1,35 @@
+body{
+margin:0;
+font-family:Segoe UI, Arial;
+background:#f4f6f9;
+}
+
+.topbar{
+background:#0d1b2a;
+color:white;
+padding:15px 30px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.menu{
+display:flex;
+gap:25px;
+}
+
+.menu a{
+color:white;
+text-decoration:none;
+font-weight:500;
+}
+
+.menu a:hover{
+color:#4dabf7;
+}
+
+.container{
+width:90%;
+margin:auto;
+margin-top:40px;
+}

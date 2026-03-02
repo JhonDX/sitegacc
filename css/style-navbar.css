@@ -1,0 +1,116 @@
+/* Navbar base */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255,255,255,0.95);
+    padding: 15px 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0052CC; /* azul forte */
+}
+
+.navbar .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.navbar .menu li {
+    position: relative;
+    margin-left: 20px;
+}
+
+.navbar .menu li a {
+    text-decoration: none;
+    color: #0052CC; /* azul forte */
+    font-weight: 600;
+    padding: 8px 12px;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+.navbar .menu li a:hover {
+    background-color: #00B050; /* verde forte */
+    color: #fff;
+}
+
+/* Dropdown */
+.navbar .menu li .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    list-style: none;
+    padding: 10px 0;
+    border-radius: 5px;
+    min-width: 150px;
+    z-index: 100;
+}
+
+.navbar .menu li:hover .submenu {
+    display: block;
+}
+
+.navbar .menu li .submenu li {
+    margin: 0;
+}
+
+.navbar .menu li .submenu li a {
+    display: block;
+    padding: 8px 15px;
+    color: #0052CC;
+}
+
+.navbar .menu li .submenu li a:hover {
+    background-color: #00B050;
+    color: #fff;
+}
+
+/* Logout */
+.logout-menu a {
+    background: #FF4D4D;
+    color: #fff !important;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.logout-menu a:hover {
+    background-color: #CC0000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navbar .menu {
+        flex-direction: column;
+        width: 100%;
+    }
+    .navbar .menu li {
+        margin-left: 0;
+        width: 100%;
+    }
+    .navbar .menu li a {
+        width: 100%;
+    }
+    .navbar .menu li .submenu {
+        position: relative;
+        top: 0;
+    }
+}
