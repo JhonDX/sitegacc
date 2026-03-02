@@ -1,7 +1,11 @@
 <?php
 // navbar.php
-session_start();
-if(!isset($_SESSION['user'])){
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+if (!isset($_SESSION['user'])) {
     header("Location: login.php");
     exit;
 }
@@ -24,7 +28,7 @@ if(!isset($_SESSION['user'])){
             </ul>
         </li>
 
-        <!-- Novo menu Tutoriais -->
+        <!-- Menu Tutoriais -->
         <li class="dropdown">
             <a href="#">Tutoriais</a>
             <ul class="submenu">
@@ -36,5 +40,6 @@ if(!isset($_SESSION['user'])){
 
         <li class="logout-menu"><a href="logout.php">Sair</a></li>
     </ul>
+
     <link rel="stylesheet" href="css/style-navbar.css">
 </nav>
