@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /var/www/html
-COPY sitegacc/ .
+COPY . .
 
 RUN chown -R www-data:www-data /var/www/html
 
