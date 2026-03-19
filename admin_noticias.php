@@ -21,7 +21,7 @@
 </div>
 
 
-<form action="salvar_noticia.php" method="POST" enctype="multipart/form-data">
+<form action="actions/salvar_noticia.php" method="POST" enctype="multipart/form-data">
     <input type="text" name="titulo" placeholder="Título" required>
     
     <textarea name="conteudo" placeholder="Conteúdo" required></textarea>
