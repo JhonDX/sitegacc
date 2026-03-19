@@ -1,135 +1,153 @@
-/* Reset e fonte */
-body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #0052CC, #00B050); /* azul forte → verde forte */
-    min-height: 100vh;
+/* RESET */
+*{
+    box-sizing:border-box;
 }
 
-/* Container */
-.container {
-    max-width: 900px;
-    margin: 50px auto;
-    background: rgba(255,255,255,0.95);
-    padding: 30px 25px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+/* BODY */
+body{
+    margin:0;
+    font-family: Segoe UI, Arial, sans-serif;
+    background:#f4f6f9;
 }
 
-/* Títulos */
-.container h1 {
-    color: #0052CC;
-    margin-bottom: 20px;
+/* CONTAINER */
+.container{
+    width:90%;
+    max-width:1000px;
+    margin:40px auto;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
 }
 
-/* Formulário de adição */
-.form-add {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
+/* TITULOS */
+.container h1{
+    color:#0d1b2a;
+    margin-bottom:20px;
 }
 
-.form-add input {
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    flex: 1;
-    min-width: 150px;
-    font-size: 14px;
-    transition: all 0.3s ease;
+/* FORM */
+.form-add{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
 }
 
-.form-add input:focus {
-    border-color: #00B050;
-    box-shadow: 0 0 8px rgba(0,176,80,0.4);
-    outline: none;
+/* INPUT */
+.form-add input{
+    padding:10px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    flex:1;
+    min-width:150px;
+    font-size:14px;
+    transition:0.2s;
 }
 
-.form-add button {
-    padding: 10px 20px;
-    background: linear-gradient(90deg, #0052CC, #00B050);
-    border: none;
-    border-radius: 8px;
-    color: #fff;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
+/* FOCUS */
+.form-add input:focus{
+    border-color:#4dabf7;
+    box-shadow:0 0 5px rgba(77,171,247,0.5);
+    outline:none;
 }
 
-.form-add button:hover {
-    background: linear-gradient(90deg, #003A99, #009F40);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+/* BOTÃO */
+.form-add button{
+    padding:10px 20px;
+    background:#0d1b2a;
+    border:none;
+    border-radius:8px;
+    color:#fff;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.2s;
 }
 
-/* Tabela */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
+/* HOVER BOTÃO */
+.form-add button:hover{
+    background:#1b263b;
 }
 
+/* TABELA */
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:10px;
+    font-size:14px;
+}
+
+/* TH / TD */
 table th,
-table td {
-    border: 1px solid #ddd;
-    padding: 12px 15px;
-    text-align: left;
+table td{
+    border:1px solid #e0e0e0;
+    padding:10px 12px;
+    text-align:left;
 }
 
-table th {
-    background-color: #0052CC;
-    color: #fff;
+/* HEADER */
+table th{
+    background:#0d1b2a;
+    color:white;
 }
 
-table tr:nth-child(even) {
-    background-color: rgba(0,176,80,0.1);
+/* ZEBRA */
+table tr:nth-child(even){
+    background:#f8f9fa;
 }
 
-table tr:hover {
-    background-color: rgba(0,176,80,0.2);
+/* HOVER */
+table tr:hover{
+    background:#eef4ff;
 }
 
-/* Links de ação */
-a.delete {
-    color: #FF4D4D;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
+/* DELETE */
+a.delete{
+    color:#e03131;
+    font-weight:600;
+    text-decoration:none;
 }
 
-a.delete:hover {
-    color: #CC0000;
-    text-decoration: underline;
+a.delete:hover{
+    text-decoration:underline;
 }
 
-/* Footer logout */
-footer {
-    text-align: center;
-    margin: 30px 0;
+/* FOOTER */
+footer{
+    text-align:center;
+    margin:30px 0;
 }
 
-footer a.logout {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #FF4D4D;
-    color: #fff;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
+/* BOTÃO LOGOUT */
+footer a.logout{
+    display:inline-block;
+    padding:10px 20px;
+    background:#e03131;
+    color:#fff;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.2s;
 }
 
-footer a.logout:hover {
-    background-color: #CC0000;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+footer a.logout:hover{
+    background:#c92a2a;
 }
 
-/* Responsividade */
-@media screen and (max-width: 768px) {
-    .form-add {
-        flex-direction: column;
+/* RESPONSIVO */
+@media screen and (max-width:768px){
+
+    .form-add{
+        flex-direction:column;
     }
-    .form-add input, .form-add button {
-        width: 100%;
+
+    .form-add input,
+    .form-add button{
+        width:100%;
+    }
+
+    table{
+        font-size:13px;
     }
 }

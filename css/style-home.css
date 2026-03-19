@@ -1,135 +1,152 @@
-/* Reset básico e fontes */
-body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #0052CC, #00B050); /* azul forte → verde forte */
-    min-height: 100vh;
+/* RESET */
+*{
+    box-sizing: border-box;
 }
 
-/* Navbar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgba(255,255,255,0.95);
-    padding: 15px 30px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+/* BODY (PADRÃO GLOBAL) */
+body{
+    margin:0;
+    font-family: Segoe UI, Arial, sans-serif;
+    background:#f4f6f9;
 }
 
-.navbar .logo {
-    font-size: 20px;
-    font-weight: 700;
-    color: #0052CC;
+/* NAVBAR (AGORA PADRÃO TOPBAR) */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#0d1b2a;
+    padding:15px 30px;
+    color:white;
 }
 
-.navbar .menu {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
+/* LOGO */
+.navbar .logo{
+    font-size:20px;
+    font-weight:700;
+    color:white;
 }
 
-.navbar .menu li {
-    position: relative;
-    margin-left: 20px;
+/* MENU */
+.navbar .menu{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    align-items:center;
+    gap:25px;
 }
 
-.navbar .menu li a {
-    text-decoration: none;
-    color: #0052CC;
-    font-weight: 600;
-    padding: 8px 12px;
-    transition: all 0.3s ease;
+/* ITENS */
+.navbar .menu li{
+    position:relative;
 }
 
-.navbar .menu li a:hover {
-    background-color: #00B050;
-    color: #fff;
-    border-radius: 5px;
+/* LINKS */
+.navbar .menu li a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    padding:8px 12px;
+    transition:0.2s;
 }
 
-/* Dropdown */
-.navbar .menu li .submenu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: rgba(255,255,255,0.95);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    list-style: none;
-    padding: 10px 0;
-    border-radius: 5px;
-    min-width: 150px;
-    z-index: 100;
+/* HOVER */
+.navbar .menu li a:hover{
+    color:#4dabf7;
 }
 
-.navbar .menu li:hover .submenu {
-    display: block;
+/* DROPDOWN */
+.navbar .menu li .submenu{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    background:white;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    list-style:none;
+    padding:10px 0;
+    border-radius:8px;
+    min-width:160px;
+    z-index:100;
 }
 
-.navbar .menu li .submenu li {
-    margin: 0;
+/* MOSTRAR DROPDOWN */
+.navbar .menu li:hover .submenu{
+    display:block;
 }
 
-.navbar .menu li .submenu li a {
-    display: block;
-    padding: 8px 15px;
-    color: #0052CC;
+/* ITENS DROPDOWN */
+.navbar .menu li .submenu li a{
+    display:block;
+    padding:8px 15px;
+    color:#0d1b2a;
 }
 
-.navbar .menu li .submenu li a:hover {
-    background-color: #00B050;
-    color: #fff;
-    border-radius: 5px;
+/* HOVER DROPDOWN */
+.navbar .menu li .submenu li a:hover{
+    background:#f4f6f9;
+    color:#0d1b2a;
 }
 
-/* Logout menu */
-.logout-menu a {
-    background: #FF4D4D;
-    color: #fff !important;
-    border-radius: 5px;
+/* LOGOUT */
+.logout-menu a{
+    background:#e03131;
+    color:#fff !important;
+    border-radius:5px;
 }
 
-.logout-menu a:hover {
-    background: #CC0000;
+.logout-menu a:hover{
+    background:#c92a2a;
 }
 
-/* Container principal */
-.container {
-    max-width: 900px;
-    margin: 50px auto;
-    background: rgba(255,255,255,0.95);
-    padding: 30px 25px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+/* CONTAINER PADRÃO */
+.container{
+    width:90%;
+    margin:auto;
+    margin-top:40px;
 }
 
-.container h1 {
-    color: #0052CC;
-    margin-bottom: 15px;
+/* BOX INTERNO */
+.box{
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
 }
 
-.container p {
-    font-size: 16px;
-    color: #333;
+/* TITULOS */
+.container h1{
+    color:#0d1b2a;
+    margin-bottom:15px;
 }
 
-/* Responsividade simples */
-@media screen and (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
+.container p{
+    font-size:15px;
+    color:#555;
+}
+
+/* RESPONSIVO */
+@media screen and (max-width:768px){
+
+    .navbar{
+        flex-direction:column;
+        align-items:flex-start;
     }
-    .navbar .menu {
-        flex-direction: column;
-        width: 100%;
+
+    .navbar .menu{
+        flex-direction:column;
+        width:100%;
+        gap:10px;
+        margin-top:10px;
     }
-    .navbar .menu li {
-        margin-left: 0;
-        width: 100%;
+
+    .navbar .menu li{
+        width:100%;
     }
-    .navbar .menu li a {
-        width: 100%;
+
+    .navbar .menu li a{
+        display:block;
+        width:100%;
     }
 }

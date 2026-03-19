@@ -1,6 +1,6 @@
 FROM php:8.2-apache
 
-# Instala dependências do LDAP
+# Instala LDAP
 RUN apt-get update && apt-get install -y \
     libldap2-dev \
     && docker-php-ext-install ldap \
@@ -9,6 +9,12 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /var/www/html
 COPY . .
 
-RUN chown -R www-data:www-data /var/www/html
+# Permissões corretas
+RUN chown -R www-data:www-data /var/www/html \
+    && chmod -R 755 /var/www/html \
+    && mkdir -p /var/www/html/dados \
+    && mkdir -p /var/www/html/uploads \
+    && chmod -R 777 /var/www/html/dados \
+    && chmod -R 777 /var/www/html/uploads
 
 EXPOSE 80

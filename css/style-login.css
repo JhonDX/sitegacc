@@ -1,86 +1,91 @@
-/* Fundo e centralização */
-body {
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #0052CC, #00B050); /* azul forte → verde forte */
+/* RESET */
+*{
+    box-sizing: border-box;
 }
 
-/* Card do login */
-.login-card {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 40px 35px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    width: 350px;
-    text-align: center;
-    border-top: 5px solid #0052CC; /* azul forte */
+/* BODY (PADRÃO SISTEMA) */
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family: Segoe UI, Arial, sans-serif;
+    background:#f4f6f9;
 }
 
-.login-card h1 {
-    margin-bottom: 30px;
-    color: #333;
-    font-size: 26px;
+/* CARD LOGIN */
+.login-card{
+    background:white;
+    padding:40px 35px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    width:350px;
+    text-align:center;
+    border-top:4px solid #0d1b2a;
 }
 
-/* Inputs */
+/* TÍTULO */
+.login-card h1{
+    margin-bottom:25px;
+    color:#0d1b2a;
+    font-size:24px;
+}
+
+/* INPUTS */
 .login-card input[type="text"],
-.login-card input[type="password"] {
-    width: 100%;
-    padding: 12px 15px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-    transition: all 0.3s ease;
+.login-card input[type="password"]{
+    width:100%;
+    padding:12px 15px;
+    margin-bottom:15px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    font-size:15px;
+    transition:0.2s;
 }
 
-.login-card input[type="text"]:focus,
-.login-card input[type="password"]:focus {
-    border-color: #00B050; /* verde forte */
-    box-shadow: 0 0 8px rgba(0,176,80,0.4);
-    outline: none;
+/* FOCUS */
+.login-card input:focus{
+    border-color:#4dabf7;
+    box-shadow:0 0 5px rgba(77,171,247,0.5);
+    outline:none;
 }
 
-/* Botão */
-.login-card button {
-    width: 100%;
-    padding: 12px;
-    background: linear-gradient(90deg, #0052CC, #00B050); /* azul → verde forte */
-    border: none;
-    border-radius: 10px;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
+/* BOTÃO */
+.login-card button{
+    width:100%;
+    padding:12px;
+    background:#0d1b2a;
+    border:none;
+    border-radius:8px;
+    color:#fff;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.2s;
 }
 
-.login-card button:hover {
-    background: linear-gradient(90deg, #003A99, #009F40); /* hover mais escuro */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+/* HOVER BOTÃO */
+.login-card button:hover{
+    background:#1b263b;
 }
 
-/* Link de esqueci a senha */
-.login-card a {
-    display: block;
-    margin-top: 15px;
-    color: #00B050; /* verde forte */
-    font-size: 14px;
-    text-decoration: none;
+/* LINK */
+.login-card a{
+    display:block;
+    margin-top:15px;
+    color:#4dabf7;
+    font-size:14px;
+    text-decoration:none;
 }
 
-.login-card a:hover {
-    text-decoration: underline;
-    color: #0052CC; /* azul forte ao passar o mouse */
+.login-card a:hover{
+    text-decoration:underline;
 }
 
-/* Mensagem de erro */
-.erro {
-    color: red;
-    font-size: 14px;
-    margin-top: 10px;
+/* ERRO */
+.erro{
+    color:#e03131;
+    font-size:14px;
+    margin-bottom:10px;
 }

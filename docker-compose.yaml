@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: Gacc
+    ports:
+      - "80:80"
+    volumes:
+      - ./dados:/var/www/html/dados
+      - ./uploads:/var/www/html/uploads
