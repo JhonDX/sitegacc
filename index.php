@@ -2,14 +2,14 @@
 session_start();
 require_once 'env.php';
 
-// carregar notícias
-$arquivoNoticias = 'dados/noticias.json';
+$arquivoNoticias = __DIR__ . '/dados/noticias.json';
 
 if (!file_exists($arquivoNoticias)) {
     file_put_contents($arquivoNoticias, '[]');
 }
 
 $noticias = json_decode(file_get_contents($arquivoNoticias), true);
+if (!$noticias) $noticias = [];
 ?>
 
 <!DOCTYPE html>
@@ -27,6 +27,25 @@ $noticias = json_decode(file_get_contents($arquivoNoticias), true);
     height: 150px;
     object-fit: cover;
     border-radius: 8px;
+}
+
+/* 🔥 Corrige somente as notícias (sem afetar sistemas) */
+.cards .card a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background: transparent;
+}
+
+.cards .card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+.cards .card:hover {
+    transform: translateY(-3px);
 }
 </style>
 
@@ -62,25 +81,25 @@ $noticias = json_decode(file_get_contents($arquivoNoticias), true);
         <div class="card">
             <h3>Zabbix</h3>
             <p>Monitoramento de infraestrutura</p>
-            <a href="<?php echo $_ENV['ZABBIX_URL']; ?>" target="_blank">Acessar</a>
+            <a href="<?php echo $_ENV['ZABBIX_URL']; ?>" target="_blank" class="btn">Acessar</a>
         </div>
 
         <div class="card">
             <h3>GLPI</h3>
             <p>Gestão de chamados</p>
-            <a href="<?php echo $_ENV['CHAMADOS_URL']; ?>" target="_blank">Acessar</a>
+            <a href="<?php echo $_ENV['CHAMADOS_URL']; ?>" target="_blank" class="btn">Acessar</a>
         </div>
 
         <div class="card">
             <h3>Grafana</h3>
             <p>Dashboards e métricas</p>
-            <a href="<?php echo $_ENV['GRAFANA_URL']; ?>" target="_blank">Acessar</a>
+            <a href="<?php echo $_ENV['GRAFANA_URL']; ?>" target="_blank" class="btn">Acessar</a>
         </div>
 
         <div class="card">
             <h3>Backup</h3>
             <p>Gerenciamento de backups</p>
-            <a href="<?php echo $_ENV['BACKUP_URL']; ?>" target="_blank">Acessar</a>
+            <a href="<?php echo $_ENV['BACKUP_URL']; ?>" target="_blank" class="btn">Acessar</a>
         </div>
 
     </div>
@@ -93,13 +112,17 @@ $noticias = json_decode(file_get_contents($arquivoNoticias), true);
         <?php if (!empty($noticias)): ?>
             <?php foreach (array_reverse($noticias) as $n): ?>
                 <div class="card">
-                    
-                    <?php if (!empty($n['imagem'])): ?>
-                        <img src="<?php echo $n['imagem']; ?>" class="noticia-img">
-                    <?php endif; ?>
 
-                    <h3><?php echo htmlspecialchars($n['titulo']); ?></h3>
-                    <p><?php echo htmlspecialchars($n['conteudo']); ?></p>
+                    <a href="noticia.php?id=<?php echo $n['id']; ?>">
+
+                        <?php if (!empty($n['imagem'])): ?>
+                            <img src="<?php echo $n['imagem']; ?>" class="noticia-img">
+                        <?php endif; ?>
+
+                        <h3><?php echo htmlspecialchars($n['titulo']); ?></h3>
+
+                    </a>
+
                 </div>
             <?php endforeach; ?>
         <?php else: ?>
