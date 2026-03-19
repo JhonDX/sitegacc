@@ -6,6 +6,12 @@ services:
     container_name: Gacc
     ports:
       - "80:80"
+
+    # Garante que o container rode como www-data
+    user: "33:33"
+
     volumes:
       - ./dados:/var/www/html/dados
       - ./uploads:/var/www/html/uploads
+
+    restart: unless-stopped

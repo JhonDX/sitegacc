@@ -58,10 +58,9 @@ if (!$noticias) $noticias = [];
     
     <div class="menu">
         <a href="#">Home</a>
-        <a href="<?php echo $_ENV['DOCUMENTACAO_URL']; ?>" target="_blank">Documentação</a>
         <a href="<?php echo $_ENV['CHAMADOS_URL']; ?>" target="_blank">Chamados</a>
         <a href="login_noticias.php">Administrar Notícias</a>
-        <a href="login.php">Área da TI 🔐</a>
+        <a href="login.php">Administradores</a>
     </div>
 </div>
 
@@ -69,7 +68,7 @@ if (!$noticias) $noticias = [];
 
     <!-- BOAS VINDAS -->
     <div class="info-box">
-        <h2>Bem-vindo 👋</h2>
+        <h2>Bem-vindo</h2>
         <p>Este é o portal da infraestrutura. Para acessar sistemas internos, entre na área da TI.</p>
     </div>
 
@@ -77,11 +76,16 @@ if (!$noticias) $noticias = [];
     <h2>Sistemas</h2>
 
     <div class="cards">
+        <div class="card">
+            <h3>GLPI</h3>
+            <p>Gestão de chamados</p>
+            <a href="<?php echo $_ENV['CHAMADOS_URL']; ?>" target="_blank" class="btn">Acessar</a>
+        </div>
 
         <div class="card">
-            <h3>Zabbix</h3>
-            <p>Monitoramento de infraestrutura</p>
-            <a href="<?php echo $_ENV['ZABBIX_URL']; ?>" target="_blank" class="btn">Acessar</a>
+            <h3>Agenda</h3>
+            <p>Gestão de Eventos</p>
+            <a href="<?php echo $_ENV['EVENTOS_URL']; ?>" target="_blank" class="btn">Acessar</a>
         </div>
 
         <div class="card">
@@ -90,22 +94,10 @@ if (!$noticias) $noticias = [];
             <a href="<?php echo $_ENV['CHAMADOS_URL']; ?>" target="_blank" class="btn">Acessar</a>
         </div>
 
-        <div class="card">
-            <h3>Grafana</h3>
-            <p>Dashboards e métricas</p>
-            <a href="<?php echo $_ENV['GRAFANA_URL']; ?>" target="_blank" class="btn">Acessar</a>
-        </div>
-
-        <div class="card">
-            <h3>Backup</h3>
-            <p>Gerenciamento de backups</p>
-            <a href="<?php echo $_ENV['BACKUP_URL']; ?>" target="_blank" class="btn">Acessar</a>
-        </div>
-
     </div>
 
     <!-- NOTÍCIAS -->
-    <h2 style="margin-top:40px;">📰 Notícias</h2>
+    <h2 style="margin-top:40px;">Notícias</h2>
 
     <div class="cards">
 
@@ -136,9 +128,9 @@ if (!$noticias) $noticias = [];
 
     <div class="info-box">
         <ul>
-            <li>🔧 Manutenção programada dia 20/03 às 22h</li>
-            <li>📢 Novo procedimento de backup implantado</li>
-            <li>⚠️ Atualização de segurança nos servidores Linux</li>
+            <li>Manutenção programada dia 20/03 às 22h</li>
+            <li>Novo procedimento de backup implantado</li>
+            <li>Atualização de segurança nos servidores Linux</li>
         </ul>
     </div>
 
