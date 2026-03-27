@@ -54,7 +54,7 @@ if (!$noticias) $noticias = [];
 <body>
 
 <div class="topbar">
-    <div><strong>Painel de Infraestrutura</strong></div>
+    <div><strong>Painel do Gacc-BA</strong></div>
     
     <div class="menu">
         <a href="#">Home</a>
@@ -89,9 +89,9 @@ if (!$noticias) $noticias = [];
         </div>
 
         <div class="card">
-            <h3>GLPI</h3>
-            <p>Gestão de chamados</p>
-            <a href="<?php echo $_ENV['CHAMADOS_URL']; ?>" target="_blank" class="btn">Acessar</a>
+            <h3>Biblioteca</h3>
+            <p>Biblioteca</p>
+            <a href="<?php echo $_ENV['BIBLIOTECA_URL']; ?>" target="_blank" class="btn">Acessar</a>
         </div>
 
     </div>

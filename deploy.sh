@@ -6,6 +6,8 @@ echo "🚀 Iniciando deploy..."
 echo "🛑 Parando containers..."
 docker compose down
 
+docker rmi sitegacc-web
+
 # Sobe novamente (sem rebuild pesado)
 echo "🔨 Subindo containers..."
 docker compose up -d
