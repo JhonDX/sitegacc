@@ -11,7 +11,7 @@ services:
     user: "33:33"
 
     volumes:
-      - ./dados:/var/www/html/dados
-      - ./uploads:/var/www/html/uploads
+      - ../storage/dados:/var/www/html/dados
+      - ../storage/uploads:/var/www/html/uploads
 
     restart: unless-stopped
